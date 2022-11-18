@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Customer
+from .models import Customer, Squad
 
 class CustomerForm(ModelForm):
     class Meta:
@@ -30,3 +30,9 @@ class PlayerForm(forms.Form):
 
     name = forms.CharField(max_length=100)
     team = forms.CharField(max_length=100)
+
+
+class SquadForm(ModelForm):
+    class Meta:
+        model = Squad
+        fields = '__all__'

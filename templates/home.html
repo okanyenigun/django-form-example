@@ -13,7 +13,6 @@
 <body>
     <div class="form-frame" style="margin:50px;">
         <form action="" method="POST">{% csrf_token %}
-            {{ formset.management_form }}
             {% for form in formset %}
                 {{form.as_table}}
             {% endfor %}

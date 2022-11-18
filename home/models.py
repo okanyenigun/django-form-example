@@ -10,3 +10,8 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.first_name + " " + self.last_name
+
+
+class Squad(models.Model):
+    team = models.CharField(max_length=100)
+    player= models.CharField(max_length=100)
