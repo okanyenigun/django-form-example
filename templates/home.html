@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+</head>
+<body>
+    <div class="form-frame" style="margin:50px;">
+        <form action="" method="POST">{% csrf_token %}
+            {{ formset.management_form }}
+            {% for form in formset %}
+                {{form.as_table}}
+            {% endfor %}
+            <button class="btn btn-success" name="submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- <form method="POST"> {% csrf_token %}
+        {{form.as_table}}
+        <button name="submit" type="submit">Save</button>
+    </form> -->
+    <!-- <form method="POST"> {% csrf_token %}
+        <div class="container">
+            <h2>A Form<small>Customers</small></h2>
+              <div class="group">      
+                {{form.first_name}}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>First Name</label>
+              </div>
+              <div class="group">      
+                {{form.last_name}}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Last Name</label>
+              </div>
+              <div class="group">      
+                {{form.email}}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Email</label>
+              </div>
+              <div class="group">      
+                {{form.city}}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>City</label>
+              </div>
+              <div class="group">      
+                {{form.age}}
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>AGE</label>
+              </div>
+              <button class="btn btn-success" name="submit" type="submit">Save</button>
+          </div>
+    </form> -->
+</body>
+</html>
